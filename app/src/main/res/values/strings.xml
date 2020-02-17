@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">POP!Words</string>
+    <string name="voice">Voice</string>
+    <string name="stats">Stats</string>
+    <string name="correct_guess_description">Correct Guess image</string>
+    <string name="skip_word">Skip Word</string>
+    <string name="typing">Typing</string>
+    <string name="clear_data">Clear Data</string>
+    <string name="clear_data_dialog_message">Do you want to clear all attempt data?</string>
+    <string name="clear_data_dialog_title">Clear Data?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="about_the_app">About the App</string>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="summaryItem"
+            type="dev.mfazio.popwords.stats.SummaryItem" />
+    </data>
+        
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textSummaryType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            android:text="@{summaryItem.typeText}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Voice:" />
+
+        <TextView
+            android:id="@+id/textCorrectRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="24sp"
+            android:text="@{summaryItem.ratio}"
+            app:layout_constraintStart_toEndOf="@id/textSummaryType"
+            app:layout_constraintTop_toTopOf="@id/textSummaryType"
+            tools:text="12/31" />
+
+        <TextView
+            android:id="@+id/textCorrectPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="20sp"
+            android:text="@{summaryItem.percentageText}"
+            app:layout_constraintBottom_toBottomOf="@id/textCorrectRaw"
+            app:layout_constraintStart_toEndOf="@id/textCorrectRaw"
+            app:layout_constraintTop_toTopOf="@id/textCorrectRaw"
+            tools:text="(38.7%)" />
+
+        <TextView
+            android:id="@+id/textSkippedWords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@{summaryItem.skipsText}"
+            app:layout_constraintBottom_toBottomOf="@id/textSummaryType"
+            app:layout_constraintEnd_toEndOf="@id/textCorrectPercentage"
+            app:layout_constraintStart_toStartOf="@id/textCorrectRaw"
+            app:layout_constraintTop_toBottomOf="@id/textCorrectRaw"
+            tools:text="Skipped 5 times" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
