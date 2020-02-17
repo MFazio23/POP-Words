@@ -63,7 +63,7 @@ class TypingFragment : Fragment() {
                 this.tts.language = Locale.US
             }
         }.apply {
-            this.setSpeechRate(0.25f)
+            this.setSpeechRate(1f)
             this.setOnUtteranceProgressListener(typingViewModel.utteranceProgressListener)
         }
 
@@ -88,7 +88,7 @@ class TypingFragment : Fragment() {
             } ?: throw Exception("Sound animation view not found")
 
             this@TypingFragment.successAnimationView = successAnimationView.apply {
-                this.hideOnAnimationComplete() {
+                this.hideOnAnimationComplete {
                     typingViewModel.getNewWord()
                 }
             }

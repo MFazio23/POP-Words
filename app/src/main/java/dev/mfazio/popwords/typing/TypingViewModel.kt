@@ -53,17 +53,6 @@ class TypingViewModel(application: Application) : AndroidViewModel(application) 
                 )
             )
         }
-
-        /*if (guessWasCorrect) {
-            *//*Handler().postDelayed(
-                {
-                    getNewWord()
-                    wasCorrect.value = null
-                    guessedWord.value = "???"
-                    currentGuess.value = null
-                }, 2000
-            )*//*
-        }*/
     }
 
     fun skipWord() {

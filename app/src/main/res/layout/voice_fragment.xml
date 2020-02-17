@@ -20,14 +20,17 @@
 
         <TextView
             android:id="@+id/message"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{viewModel.currentWord}"
-            android:textSize="42sp"
+            android:textSize="56sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:wordWasSuccessful="@{viewModel.wasCorrect}" />
+            app:wordWasSuccessful="@{viewModel.wasCorrect}"
+            tools:text="if"/>
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/listenAnimationView"
@@ -48,7 +51,7 @@
             android:onClick="@{() -> viewModel.skipWord()}"
             android:padding="25dp"
             android:stateListAnimator="@null"
-            android:text="@string/skip_word"
+            android:text="@string/skip"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +61,7 @@
             android:id="@+id/successAnimationView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/buttonSkip"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

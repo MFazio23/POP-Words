@@ -11,4 +11,9 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="about_the_app">About the App</string>
+    <string name="enter_word">Enter Word</string>
+    <string name="ok">OK</string>
+    <string name="about_the_app_message">POP!Words is an app to allow kids to practice their high-frequency words.  There are forty words included in the app and could be a way to add more down the line.\n\nPopcorn icon made by Freepik from https://www.flaticon.com/free-icon/popcorn_2079771\n\nAudio playing animation created by Stephen Ng from https://lottiefiles.com/13622-audio-playing-button\nListen animation created by Juan Carlos Angustia from https://lottiefiles.com/2887-listen-state\nCheckmark animation created by Guilherme Schneider from https://lottiefiles.com/5785-checkmark\n\nApp created by Michael Fazio</string>
+    <string name="submit_text_button">Submit Text button</string>
+    <string name="skip">Skip</string>
 </resources>

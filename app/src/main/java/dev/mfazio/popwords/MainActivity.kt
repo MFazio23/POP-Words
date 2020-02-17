@@ -1,6 +1,8 @@
 package dev.mfazio.popwords
 
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.util.Linkify
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -61,7 +63,6 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
             .setPositiveButton(R.string.yes) { dialog, id ->
                 launch {
                     hfwRepository.clearAttempts()
-                    //dialog?.dismiss()
                     Toast.makeText(
                         this@MainActivity,
                         "Attempt data has been cleared!",
@@ -76,6 +77,17 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
             .show()
     }
 
-    fun showAboutTheApp(item: MenuItem) {}
+    fun showAboutTheApp(item: MenuItem) {
+        val message = SpannableString(applicationContext.getText(R.string.about_the_app_message))
+        Linkify.addLinks(message, Linkify.WEB_URLS)
+        AlertDialog.Builder(this)
+            .setMessage(message)
+            .setTitle(R.string.about_the_app)
+            .setIcon(R.drawable.ic_help_black_24dp)
+            .setPositiveButton(R.string.ok) { dialog, id ->
+            }
+            .create()
+            .show()
+    }
 
 }

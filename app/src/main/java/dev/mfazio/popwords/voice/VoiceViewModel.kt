@@ -31,6 +31,7 @@ class VoiceViewModel(application: Application) : AndroidViewModel(application) {
         result?.let { resultWords ->
 
             val guessWasCorrect = resultWords.contains(currentWord.value)
+            wasCorrect.value = guessWasCorrect
 
             viewModelScope.launch {
                 hfwRepository.addAttempt(
@@ -41,19 +42,6 @@ class VoiceViewModel(application: Application) : AndroidViewModel(application) {
                         attemptType = AttemptType.Voice
                     )
                 )
-            }
-
-            if(guessWasCorrect) {
-                wasCorrect.value = true
-                /*Handler().postDelayed(
-                    {
-                        getNewWord()
-                        wasCorrect.value = null
-                    }, 2000
-                )*/
-            } else {
-                wasCorrect.value = false
-                this.errorText.value = "You got it wrong.  Word was ${currentWord.value} and you said [${resultWords.joinToString("\n")}]"
             }
         } ?: handleError("I'm sorry, I didn't understand what you said.  Please try again.")
     }
